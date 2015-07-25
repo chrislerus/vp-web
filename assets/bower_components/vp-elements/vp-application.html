@@ -1,0 +1,32 @@
+<dom-module id="vp-application">
+
+    <template>
+
+        <paper-drawer-panel>
+            <div drawer>
+                <paper-menu>
+                    <paper-item><a data-route="wall" href="/">Wall</a></paper-item>
+                    <paper-item><a data-route="mayor" href="/mayor/">My Mayor</a></paper-item>
+                    <paper-item><a data-route="profile" href="/profile/">My Profile</a></paper-item>
+                </paper-menu>
+            </div>
+            <div main>
+                <paper-header-panel>
+                    <paper-toolbar>Toolbar</paper-toolbar>
+                    <iron-pages selected="0">
+                        <div>Wall</div>
+                        <div>My Mayor</div>
+                        <div>My Profile</div>
+                    </iron-pages>
+                </paper-header-panel>
+            </div>
+        </paper-drawer-panel>
+    </template>
+
+    <script>
+        Polymer({
+            is: "vp-application"
+        });
+    </script>
+
+</dom-module>

@@ -5,18 +5,25 @@
         <paper-drawer-panel>
             <div drawer>
                 <paper-menu>
-                    <paper-item><a data-route="wall" href="/">Wall</a></paper-item>
-                    <paper-item><a data-route="mayor" href="/mayor/">My Mayor</a></paper-item>
-                    <paper-item><a data-route="profile" href="/profile/">My Profile</a></paper-item>
+                    <paper-item onclick="setPage(1)">
+                        Page 1
+                    </paper-item>
+                    <paper-item onclick="setPage(2)">
+                        Page 2
+                    </paper-item>
+                    <span id="selected"></span>
                 </paper-menu>
             </div>
             <div main>
                 <paper-header-panel>
                     <paper-toolbar>Toolbar</paper-toolbar>
-                    <iron-pages selected="0">
-                        <div>Wall</div>
-                        <div>My Mayor</div>
-                        <div>My Profile</div>
+                    <iron-pages attr-for-selected="data-route" selected="{{page}}">
+                        <div data-route="page-1">
+                            This is page 1.
+                        </div>
+                        <div data-route="page-2">
+                            This is page 2.
+                        </div>
                     </iron-pages>
                 </paper-header-panel>
             </div>
@@ -25,8 +32,31 @@
 
     <script>
         Polymer({
-            is: "vp-application"
+            is: "vp-application",
+            properties: {
+                page: {
+                    type: String,
+                    notify: true
+                },
+                route: {
+                    type: String,
+                    notify: true
+                }
+            }
         });
+        var myElement = document.querySelector('vp-application');
+
+        function setPage(page, route) {
+            myElement.page = 'page-' + page;
+            if (typeof route === 'number') {
+                myElement.route = 'page-' + page + '-' + route;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() { setPage(1); }, 100);
+        });
+
     </script>
 
 </dom-module>

@@ -1,6 +1,9 @@
 <dom-module id="vp-application">
 
     <template>
+        <style>
+
+        </style>
 
         <paper-drawer-panel>
             <div drawer>
@@ -16,10 +19,12 @@
             </div>
             <div main>
                 <paper-header-panel>
-                    <paper-toolbar>Toolbar</paper-toolbar>
+                    <paper-toolbar>
+                        <div class="main_title">Vox Pop</div>
+                    </paper-toolbar>
                     <iron-pages attr-for-selected="data-route" selected="{{page}}">
                         <div data-route="page-1">
-                            This is page 1.
+                        <vp-list-questions></vp-list-questions>
                         </div>
                         <div data-route="page-2">
                             This is page 2.

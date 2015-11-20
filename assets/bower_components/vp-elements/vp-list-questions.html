@@ -1,0 +1,38 @@
+<dom-module id="vp-list-questions">
+
+    <template>
+        <style>
+            .list_questions  {
+                flex-direction: column;
+                margin-top: 20px;
+                max-width: 530px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        <div class="list_questions">
+
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+            <vp-question></vp-question>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: "vp-list-questions",
+            properties: {
+                question: Object
+            }
+        });
+
+    </script>
+
+</dom-module>

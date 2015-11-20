@@ -1,0 +1,51 @@
+<dom-module id="vp-question">
+
+    <template>
+        <style>
+
+            paper-card {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            .domain_city_line {
+                color: #cccccc;
+            }
+
+
+        </style>
+        <paper-card>
+            <div class="card-content">
+                <div class="domain_city_line">
+                    <span>Sports</span>
+                    <span>Marolles en Beauce</span>
+                </div>
+                <div class="user_time_line">
+                    <div class="username_info">
+                        <span>{{ question.name }}</span>
+                        <span>{{ question.handle }}</span>
+                        <span>{{ question.date }}</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <span>{{ question.content }}</span>
+                </div>
+            </div>
+            <div class="card-actions">
+                <paper-button>I like it</paper-button>
+                <paper-button>I don't like it</paper-button>
+                <paper-button>I don't care</paper-button>
+            </div>
+        </paper-card>
+    </template>
+
+    <script>
+        Polymer({
+            is: "vp-question",
+            properties: {
+                question: Object
+            }
+        });
+
+    </script>
+
+</dom-module>
